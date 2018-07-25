@@ -1,0 +1,13 @@
+﻿@model IEnumerable<ShoesStore_agforl.Models.Banner>
+
+
+@foreach (var item in Model)
+{
+    <div class="col-md-6 shop_left shp">
+
+        <a href="@Url.Action("Bestseller", "Shop")">
+            <img src="~/images/@item.Image" alt="">
+        </a>
+        <h6>@item.title</h6>
+    </div>
+}

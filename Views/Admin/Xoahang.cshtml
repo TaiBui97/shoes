@@ -1,0 +1,31 @@
+﻿@model ShoesStore_agforl.Models.Hang
+
+@{
+    ViewBag.Title = "Xoahang";
+    Layout = "~/Views/Shared/_LayoutQLSP.cshtml";
+}
+
+
+<h3>Bạn có chắc chắn muốn xóa hãng?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+           Tên hãng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenHangSanPham)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <button class="btn btn-danger" type="submit">Xóa</button>
+            <button class="btn btn-success" type="submit"><a href="@Url.Action("Hang", "Admin") ">Back to list </a></button>
+        </div>
+    }
+</div>

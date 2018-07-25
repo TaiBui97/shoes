@@ -1,0 +1,52 @@
+﻿@model IEnumerable<ShoesStore_agforl.Models.HoaDon>
+@using ShoesStore_agforl.Models
+@{
+    ViewBag.Title = "Dondathang";
+    Layout = "~/Views/Shared/_LayoutQLSP.cshtml";
+}
+
+
+
+
+<table class="table">
+    <tr>
+        <th style="width:100px"> Mã khách hàng</th>
+        <th style="width:200px"> Tình trạng giao hàng </th>
+        <th style="width:200px">Ngày đặt </th>
+        <th style="width:200px">Ngày giao </th>
+        <th style="width:200px">  Đã thanh toán </th>
+        <th style="width:150px"> Mã đơn hàng</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+   <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaKhachHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TinhTrangGiaoHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngaydat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngaygiao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dathanhtoan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaHoaDon)
+        </td>
+        <td>
+            <button class="btn btn-info" type="submit"><a href="@Url.Action("Chitietdonhang", "Admin", new { id=item.MaHoaDon }) ">Chi tiết </a></button>
+        </td>
+        <td><button class="btn btn-warning" type="submit" style="width:68px;"><a href="@Url.Action("SuaDDH", "Admin", new { id=item.MaHoaDon }) ">Sữa</a></button></td>
+
+    </tr>
+}
+
+</table>

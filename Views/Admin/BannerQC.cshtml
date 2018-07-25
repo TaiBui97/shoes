@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ShoesStore_agforl.Models.Banner>
+
+@{
+    ViewBag.Title = "BannerQC";
+    Layout = "~/Views/Shared/_LayoutQLSP.cshtml";
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Url)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="@Url.Content("~/images/"+  item.Image)" width="360px" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.title)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Url)
+        </td>
+        <td>
+            <button class="btn btn-info" type="submit"><a href="@Url.Action("ChitietBanner", "Admin", new { id=item.MaBanner }) ">Chi tiết </a></button>
+            <button class="btn btn-warning" type="submit" style="width:68px;"><a href="@Url.Action("SuaBannerQC", "Admin", new { id=item.MaBanner }) ">Sữa</a></button>
+
+        </td>
+    </tr>
+}
+
+</table>

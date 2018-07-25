@@ -1,0 +1,138 @@
+﻿@using ShoesStore_agforl.Models
+@model List<Giohang>
+
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_LayoutGioHang.cshtml";
+}
+
+<div class="ads-grid_shop">
+    <div class="shop_inner_inf">
+        <div class="privacy about">
+            <h3>Chec<span>kout</span></h3>
+
+            <div class="checkout-right">
+                <h4>Your shopping cart contains: <span>@ViewBag.Tongsoluong Products</span></h4>
+                <table class="timetable_sub">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Product</th>
+                            <th>Quality</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                            <th>Remove</th>
+                            <th>Update</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr class="rem1">
+                            <td class="invert">@item.sTenSanPham</td>
+                            <td class="invert-image"><a href="@Url.Action("Index", "Details", new { id = item.iMaSanPham })"><img src="~/images/shoes/@item.sAnh" alt="@item.sTenSanPham" class="img-responsive"></a></td>
+                            @using (Html.BeginForm("CapnhatGiohang", "Giohang", new { @iMaSp = item.iMaSanPham }))
+                            {                                                                                             
+                            <td class="invert"><input type="number" min="1" name="txtSoluong" class="input-mini" value="@item.iSoLuong"></td>                                                                                            
+                            <td>@String.Format("{0:0,0}", item.dGia)</td>
+                            <td class="invert">@String.Format("{0:0,0}", item.dThanhtien)</td>                                                        
+                            <td class="invert">
+                                 @Html.ActionLink("Xóa", "XoaGiohang", new { @iMaSp = item.iMaSanPham })                               
+                            </td>
+                            <td class="invert"><input type="submit" value="Cập nhật" /></td>
+                            }
+                        </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="checkout-left">
+    <div class="col-md-4 checkout-left-basket">
+        <a href="@Url.Action("Index","Shop")"><h4>Continue to shop</h4></a>
+
+         <ul>
+            @foreach (var item in Model)
+            {
+            <li>@item.sTenSanPham <i>-</i> <span>@String.Format("{0:0,0}", item.dThanhtien) </span></li>
+            }
+             <hr />
+           
+            <li>Total <i>-</i> <span> @ViewBag.Tongtien </span></li>
+        </ul>
+       
+    </div>
+     <div class="col-md-4 checkout-left-basket" style="float:right">
+        <a href="@Url.Action("DatHang","GioHang")"><h4>Checkout</h4></a>
+     </div>
+       
+           
+           
+       
+       
+   
+    @*<div class="col-md-8 address_form">
+            <h4>Add a new Details</h4>
+            <form action="payment.html" method="post" class="creditly-card-form agileinfo_form">
+                <section class="creditly-wrapper wrapper">
+                    <div class="information-wrapper">
+                        <div class="first-row form-group">
+                            <div class="controls">
+                                <label class="control-label">Full name: </label>
+                                <input class="billing-address-name form-control" type="text" name="name" placeholder="Full name">
+                            </div>
+                            <div class="card_number_grids">
+                                <div class="card_number_grid_left">
+                                    <div class="controls">
+                                        <label class="control-label">Mobile number:</label>
+                                        <input class="form-control" type="text" placeholder="Mobile number">
+                                    </div>
+                                </div>
+                                <div class="card_number_grid_right">
+                                    <div class="controls">
+                                        <label class="control-label">Landmark: </label>
+                                        <input class="form-control" type="text" placeholder="Landmark">
+                                    </div>
+                                </div>
+                                <div class="clear"> </div>
+                            </div>
+                            <div class="controls">
+                                <label class="control-label">Town/City: </label>
+                                <input class="form-control" type="text" placeholder="Town/City">
+                            </div>
+                            <div class="controls">
+                                <label class="control-label">Address type: </label>
+                                <select class="form-control option-w3ls">
+                                    <option>Office</option>
+                                    <option>Home</option>
+                                    <option>Commercial</option>
+
+                                </select>
+                            </div>
+                        </div>
+                        <button class="submit check_out">Delivery to this Address</button>
+                    </div>
+                </section>
+            </form>
+            <div class="checkout-right-basket">
+                <a href="payment.html">Make a Payment </a>
+            </div>
+        </div>*@
+
+    <div class="clearfix"> </div>
+
+
+    <div class="clearfix"></div>
+</div>
+        </div>
+    </div>
+    <!-- //top products -->
+    @RenderPage("~/Views/Shared/Banner.cshtml")
+    <!-- /newsletter-->
+    @Html.Partial("~/Views/User/GetMail.cshtml")
+
+
+    <!-- //newsletter-->
+ 
+   
+

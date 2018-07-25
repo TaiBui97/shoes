@@ -1,0 +1,47 @@
+﻿@model IEnumerable<ShoesStore_agforl.Models.Footer>
+
+@{
+    ViewBag.Title = "Footer";
+    Layout = "~/Views/Shared/_LayoutQLSP.cshtml";
+}
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Slogan)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Location)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Slogan)
+        </td>
+        <td>
+            <button class="btn btn-info" type="submit"><a href="@Url.Action("ChitietFooter", "Admin", new { id=item.FooterID }) ">Chi tiết </a></button>
+            <button class="btn btn-warning" type="submit" style="width:68px;"><a href="@Url.Action("SuaFooter", "Admin", new { id=item.FooterID }) ">Sữa</a></button>
+            <button class="btn btn-danger" type="submit" style="width:68px;"><a href="@Url.Action("Xoafooter", "Admin", new { id=item.FooterID }) ">Xóa </a></button>
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,81 @@
+﻿@using ShoesStore_agforl.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<ShoesStore_agforl.Models.KhachHang>
+@{
+    ViewBag.Title = "Khachhang";
+    Layout = "~/Views/Shared/_LayoutQLSP.cshtml";
+}
+@{
+    QuanTriVien kh = (QuanTriVien)Session["Taikhoanadmin"];
+}
+
+@helper Truncate(string input, int length)
+{
+if (input.Length < length)
+{
+        @input
+}
+else
+{
+        @input.Substring(0, length)<text>...</text>
+}
+}
+
+<button class="btn btn-success" type="submit"><a href="@Url.Action("ThemKH", "Admin") ">THÊM KHÁCH HÀNG </a></button>
+
+<table class="table">
+    <tr>
+        <th style="width:150px"> Mã Khách Hàng</th>
+        <th style="width:100px"> Tên Khách Hàng</th>
+        <th style="width:150px"> Tài khoản</th>
+        <th style="width:200px"> Email</th>
+        <th style="width:200px"> Ngày Sinh </th>
+        <th style="width:20px"></th>
+        <th style="width:20px"></th>
+        <th style="width:20px"></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaKhachHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenKhachHang)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TaiKhoan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ngaysinh)
+        </td>
+        <td>
+            <button class="btn btn-info" type="submit" ><a href="@Url.Action("ChitietKH", "Admin", new { id=item.MaKhachHang }) ">Chi tiết</a></button>
+
+        </td>
+        <td>
+            <button class="btn btn-warning" type="submit"><a href="@Url.Action("SuaKH", "Admin", new { id=item.MaKhachHang }) ">Sữa</a></button>
+
+        </td>
+        <td>
+            <button class="btn btn-danger" type="submit"><a href="@Url.Action("XoaKH", "Admin", new { id=item.MaKhachHang }) ">Xóa</a></button>
+
+        </td>
+    </tr>
+}
+
+</table>
+</table>
+<hr />
+<div class="MenuTrang">
+
+    @Html.PagedListPager(Model, page => Url.Action("Khachhang", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>

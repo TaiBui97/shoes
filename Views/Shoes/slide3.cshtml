@@ -1,0 +1,15 @@
+﻿@model IEnumerable<ShoesStore_agforl.Models.Slide>
+
+
+@foreach (var item in Model)
+{
+    <div class="banner-top" style="background: url(../images//@item.IMG) no-repeat 0px 0px;	background-size: cover;">
+        <div class="banner-info-wthree">
+            <h3>@item.Brand</h3>
+            <p>@item.Slogan</p>
+
+        </div>
+
+    </div>
+
+}

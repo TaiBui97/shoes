@@ -1,0 +1,58 @@
+﻿@model ShoesStore_agforl.Models.Contact
+
+@{
+    ViewBag.Title = "ChitietContact";
+    Layout = "~/Views/Shared/_LayoutQLSP.cshtml";
+}
+
+
+<div>
+    
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Phone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button class="btn btn-success" type="submit"><a href="@Url.Action("Contacts", "Admin") ">Back to list </a></button>
+    <button class="btn btn-danger" type="submit"><a href="@Url.Action("XoaContact", "Admin", new { id = Model.ID }) ">Xóa </a></button>
+
+</p>

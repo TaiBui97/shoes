@@ -1,0 +1,15 @@
+﻿@model IEnumerable<ShoesStore_agforl.Models.SanPham>
+
+@foreach (var item in Model)
+{
+<div class="tab1">
+
+    <div class="single_page">
+        <h6>@item.TenSanPham</h6>
+        <p>
+          @item.ChiTiet
+        </p>
+        
+    </div>
+</div>
+}

@@ -1,0 +1,76 @@
+﻿@model IEnumerable<ShoesStore_agforl.Models.ChiTietHoaDon>
+@using ShoesStore_agforl.Models
+@{
+    ViewBag.Title = "ctdonhang1";
+    Layout = "~/Views/Shared/_LayoutQLSP.cshtml";
+}
+
+
+
+<table class="table">
+    <tr>
+        <th>
+          Mã HĐ
+        </th>
+        <th>
+            Mã SP
+        </th>
+        <th>
+            Tên SP
+        </th>
+        <th>Ảnh</th>
+       
+        <th>
+            Đơn giá
+        </th>
+        <th>
+            Số Lượng
+        </th>
+        <th style="width:120px;">
+            Ngày đặt
+        </th>
+        <th style="width:120px;" >
+            Ngày giao
+        </th>
+       
+       
+        <th>Thanh toán</th>
+        <th>Tình trạng</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaHoaDon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaSanPham)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => @item.SanPham.TenSanPham)
+        </td>
+        <td> <img src="@Url.Content("~/images/shoes/"+  @item.SanPham.Anh)" width="120px" /></td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dongia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Soluong)
+        </td><td>
+            @Html.DisplayFor(modelItem => item.HoaDon.Ngaydat)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoaDon.Ngaygiao)
+        </td>
+        
+
+        <td>
+            @Html.DisplayFor(modelItem => item.HoaDon.Dathanhtoan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HoaDon.TinhTrangGiaoHang)
+        </td>
+
+    </tr>
+}
+
+</table>

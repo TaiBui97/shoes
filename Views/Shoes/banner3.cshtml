@@ -1,0 +1,23 @@
+﻿@model IEnumerable<ShoesStore_agforl.Models.QuangCao>
+
+@foreach(var item in Model)
+{ 
+<div class="col-md-6 grids_sec_2_left">
+
+    <div class="style-image-2">
+        <img src="~/images/@item.Anh" alt="shoe">
+        <div class="style-grid-2-text">
+            <h3>@item.HieuGiay </h3>
+        </div>
+    </div>
+    <div class="grid_sec_info last">
+        <div class="style-grid-2-text_info">
+            <h3>@item.HieuGiay</h3>
+            <p>@item.BaiViet</p>
+            <div class="shop-button two">
+                <a href="@Url.Action("SpTheohang","Shop" ,new { id = 5 })">Shop Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+}

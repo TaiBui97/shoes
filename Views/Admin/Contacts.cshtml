@@ -1,0 +1,77 @@
+﻿@using ShoesStore_agforl.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<ShoesStore_agforl.Models.Contact>
+
+@{
+    ViewBag.Title = "Contacts";
+    Layout = "~/Views/Shared/_LayoutQLSP.cshtml";
+}
+@helper Truncate(string input, int length)
+{
+if (input.Length < length)
+{
+        @input
+}
+else
+{
+        @input.Substring(0, length)<text>...</text>
+}
+}
+
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Phone
+        </th>
+        <th>
+           Email
+        </th>
+        <th>
+            Subject
+        </th>
+        <th>
+           Messages
+        </th>
+
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Subject)
+        </td>
+        <td>
+            @Truncate(item.Message, 60)
+        </td>
+        <td>
+            <button class="btn btn-info" type="submit"><a href="@Url.Action("ChitietContact", "Admin", new { id=item.ID }) ">Chi tiết </a></button>
+            <button class="btn btn-danger" type="submit" style="width:68px;"><a href="@Url.Action("XoaContact", "Admin", new { id=item.ID }) ">Xóa </a></button>
+        </td>
+    </tr>
+}
+
+</table>
+<hr />
+<div class="MenuTrang">
+
+    @Html.PagedListPager(Model, page => Url.Action("Giay", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>

@@ -1,0 +1,146 @@
+﻿
+@using ShoesStore_agforl.Models
+@model List<Giohang>
+
+@{
+    ViewBag.Title = "DatHang";
+    Layout = "~/Views/Shared/_LayoutGioHang.cshtml";
+}
+
+
+
+
+<div class="ads-grid_shop">
+    <div class="shop_inner_inf">
+        <div class="privacy about">
+            <h3>Chec<span>kout</span></h3>
+
+            <div class="checkout-right">
+                <h4>Your shopping cart contains: <span>@ViewBag.Tongsoluong Products</span></h4>
+                <table class="timetable_sub">
+                    <thead>
+                        <tr>
+                            <th>Product Name</th>
+                            <th>Product</th>
+                            <th>Quality</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                          
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr class="rem1">
+                                <td class="invert">@item.sTenSanPham</td>
+                                <td class="invert-image"><a href="@Url.Action("Index", "Details", new { id = item.iMaSanPham })"><img src="~/images/shoes/@item.sAnh" alt="@item.sTenSanPham" class="img-responsive"></a></td>
+                                
+                                    <td class="invert"><input type="number" min="1" name="txtSoluong" class="input-mini" value="@item.iSoLuong"></td>
+                                    <td>@String.Format("{0:0,0}", item.dGia)</td>
+                                    <td class="invert">@String.Format("{0:0,0}", item.dThanhtien)</td>
+                                   
+                                
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="checkout-left">
+                <div class="col-md-4 checkout-left-basket">
+                    <a href="@Url.Action("GioHang","GioHang")"><h4>Back to cart</h4></a>
+
+                    <ul>
+                        @foreach (var item in Model)
+            {
+                            <li>@item.sTenSanPham <i>-</i> <span>@String.Format("{0:0,0}", item.dThanhtien) </span></li>
+                        }
+                        <hr />
+
+                        <li>Total <i>-</i> <span> @ViewBag.Tongtien </span></li>
+                    </ul>
+
+                </div>
+                
+
+
+@{ 
+    KhachHang kh = (KhachHang)Session["TaiKhoan"];
+ }
+                <div class="col-md-8 address_form">
+                        <h4>THÔNG TIN ĐẶT HÀNG</h4>
+                        <form action="" method="post" class="creditly-card-form agileinfo_form">
+                            <section class="creditly-wrapper wrapper">
+                                <div class="information-wrapper">
+                                    @using (Html.BeginForm())
+                                    { 
+                                        @Html.ValidationSummary(true)
+                                    <div class="first-row form-group">
+                                        <div class="controls">
+                                            <label class="control-label">Họ tên khách hàng : </label>
+                                            <label class="control-label">@kh.TenKhachHang </label>
+                                          
+                                        </div>
+                                        <div class="card_number_grids">
+                                            <div class="card_number_grid_left">
+                                                <div class="controls">
+                                                    <label class="control-label">Số điện thoại:</label>
+                                                    <label class="control-label">@kh.SoDienThoai</label>
+                                                </div>
+                                            </div>
+                                            <div class="card_number_grid_right">
+                                                <div class="controls">
+                                                    <label class="control-label">Địa chỉ : </label>
+                                                    <label class="control-label">@kh.DiaChi</label>>
+                                                </div>
+                                            </div>
+                                            <div class="clear"> </div>
+                                        </div>
+                                        <div class="controls">
+                                            <label class="control-label">Ngày Đặt: </label>
+                                            <label class="control-label">@DateTime.Now.ToShortDateString() </label>
+                                        </div>
+                                        <div class="controls">
+                                            <label class="control-label">Ngày Giao : </label>
+                                            <input type="date" name="Ngaygiao" />
+
+                                        </div>
+                                    </div>
+
+                                    <button class="btn btn-danger" type="submit">ĐÒNG Ý ĐẶT HÀNG</button>
+                                    }
+                                </div>
+                            </section>
+                        </form>
+                        <div class="checkout-right-basket">
+                            <a href="payment.html">Make a Payment </a>
+                        </div>
+                    </div>
+
+                <div class="clearfix"> </div>
+
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+    <!-- //top products -->
+    @RenderPage("~/Views/Shared/Banner.cshtml")
+    <!-- /newsletter-->
+    <div class="newsletter_w3layouts_agile">
+        <div class="col-sm-6 newsleft">
+            <h3>Sign up for Newsletter !</h3>
+        </div>
+        <div class="col-sm-6 newsright">
+            <form action="#" method="post">
+                <input type="email" placeholder="Enter your email..." name="email" required="">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+
+        <div class="clearfix"></div>
+    </div>
+    <!-- //newsletter-->
+
+
+

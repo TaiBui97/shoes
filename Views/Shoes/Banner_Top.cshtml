@@ -1,0 +1,79 @@
+﻿@using ShoesStore_agforl.Models
+<div class="banner_top" id="home">
+    <div class="wrapper_top_w3layouts">
+
+        <div class="header_agileits">
+            <div class="logo">
+                <h1><a class="navbar-brand" href="@Url.Action("Index","Shoes")"><span>Agforl</span> <i>Shoes</i></a></h1>
+            </div>
+            <div class="overlay overlay-contentpush">
+                <button type="button" class="overlay-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+
+                <nav>
+                    <ul>
+                        <li><a href="@Url.Action("Index","Shoes")" class="active">Home</a></li>
+                        <li><a href="@Url.Action("About","Shoes")">About</a></li>
+                        <li><a href="@Url.Action("contact","Shoes")">Contact us</a></li>
+                        <hr />
+                        <li><a href="@Url.Action("Index","Shop")">Shop Now</a></li>
+                        <li><a href="@Url.Action("GioHang","GioHang")">Cart @Html.Action("IconGioHang", "GioHang")</a></li>
+
+                        @if (Session["TaiKhoan"] == null)
+                        {
+                            <li><a href="@Url.Action("DangNhap","User")">Login</a></li>
+                            <li><a href="@Url.Action("DangKy","User")">Register</a></li>
+
+
+                        }
+                        else
+                        {
+                            KhachHang kh = (KhachHang)Session["TaiKhoan"];
+                            <a style="font-size:1.5rem"> Xin Chào,</a>
+                            <a style="font-size:1.5rem;margin-left:5px">@kh.TenKhachHang</a>
+                            <br />
+                            <li><a href="@Url.Action("Thongtinkhachhang","User", new { id=@kh.MaKhachHang })">Thông tin khách hàng</a></li>
+                            <li style="font-size:1.5rem">@Html.ActionLink("Thoát", "Dangxuat", "User")</li>
+                        }
+                    </ul>
+                </nav>
+            </div>
+            <div class="mobile-nav-button">
+                <button id="trigger-overlay" type="button"><i class="fa fa-bars" aria-hidden="true"></i></button>
+            </div>
+            <!-- cart details -->
+            <div class="top_nav_right">
+                <div class="shoecart shoecart2 cart cart box_1">
+                    <a href="@Url.Action("GioHang","GioHang")">
+                        <button class="top_shoe_cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+                    </a>
+                </div>
+            </div>
+            <!-- //cart details -->
+            <!-- search -->
+            <div class="search_w3ls_agileinfo">
+                <div class="cd-main-header">
+                    <ul class="cd-header-buttons">
+                        <li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+                    </ul>
+                </div>
+                <div id="cd-search" class="cd-search">
+                    <form action="/Shop/Search" method="post">
+                        <input name="Search" type="search" placeholder="Click enter after typing...">
+                    </form>
+                </div>
+            </div>
+            <!-- //search -->
+            <div class="clearfix"></div>
+        </div>
+        <!-- /slider -->
+       @Html.Partial("~/Views/Shoes/slideview.cshtml")
+        <!-- //slider -->
+        <ul class="top_icons">
+            <li><a href="#"><span class="fa fa-facebook" aria-hidden="true"></span></a></li>
+            <li><a href="#"><span class="fa fa-twitter" aria-hidden="true"></span></a></li>
+            <li><a href="#"><span class="fa fa-linkedin" aria-hidden="true"></span></a></li>
+            <li><a href="#"><span class="fa fa-google-plus" aria-hidden="true"></span></a></li>
+
+        </ul>
+    </div>
+</div>

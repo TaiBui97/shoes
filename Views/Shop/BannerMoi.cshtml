@@ -1,0 +1,7 @@
+﻿@model IEnumerable<ShoesStore_agforl.Models.Banner>
+
+
+@foreach (var item in Model)
+{
+    <img class="mySlides" src="~/images/@item.Image" style="width:100%">
+}

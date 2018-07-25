@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ShoesStore_agforl.Models.Hang>
+@using ShoesStore_agforl.Models
+@{
+    ViewBag.Title = "Hang";
+    Layout = "~/Views/Shared/_LayoutQLSP.cshtml";
+}
+@{
+    QuanTriVien kh = (QuanTriVien)Session["Taikhoanadmin"];
+}
+
+
+<button class="btn btn-success" type="submit"><a href="@Url.Action("themhang", "Admin") ">THÊM HÃNG MỚI </a></button>
+
+<table class="table">
+    <tr>
+        <th>
+           Tên hãng
+        </th>
+        <th></th>
+
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenHangSanPham)
+        </td>
+        <td>
+            <button class="btn btn-warning" type="submit" style="width:68px;"><a href="@Url.Action("Suahang", "Admin", new { id=item.MaHangSanPham }) ">Sữa</a></button>
+            <button class="btn btn-danger" type="submit" style="width:68px;"><a href="@Url.Action("Xoahang", "Admin", new { id=item.MaHangSanPham }) ">Xóa </a></button>
+        </td>
+    </tr>
+}
+
+</table>

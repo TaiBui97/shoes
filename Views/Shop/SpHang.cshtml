@@ -1,0 +1,13 @@
+﻿@model IEnumerable<ShoesStore_agforl.Models.Hang>
+
+<div class="left-side">
+    <h3 class="agileits-sear-head">Hãng</h3>
+    <ul>
+    @foreach (var giay in Model)
+    {
+        <li><a href="@Url.Action("SpTheohang", "Shop", new {id =giay.MaHangSanPham})">@giay.TenHangSanPham</a></li>
+
+    }
+
+    </ul>
+</div>

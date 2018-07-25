@@ -1,0 +1,56 @@
+﻿@using ShoesStore_agforl.Models
+@model IEnumerable<SanPham>
+
+<div class="new_arrivals">
+    <h3>Bestseller Products</h3>
+    @foreach(var giay in Model)
+    { 
+
+    <!-- /womens -->
+    <div class="col-md-3 product-men women_two">
+        <div class="product-shoe-info shoe">
+            <div class="men-pro-item">
+                <div class="men-thumb-item">
+                    <img src="~/images/shoes/@giay.Anh" alt="@giay.TenSanPham">
+                    <div class="men-cart-pro">
+                        <div class="inner-men-cart-pro">
+                            <a href="@Url.Action("Index", "Details", new {id =giay.MaSanPham})" class="link-product-add-cart">Quick View</a>
+                        </div>
+                    </div>
+                    <span class="product-new-top">New</span>
+                </div>
+                <div class="item-info-product">
+                    <h4>
+                        <a href="@Url.Action("Index", "Details", new {id =giay.MaSanPham})">@giay.TenSanPham </a>
+                    </h4>
+                    <div class="info-product-price">
+                        <div class="grid_meta">
+                            <div class="product_price">
+                                <div class="grid-price ">
+                                    <span class="money ">@giay.Gia</span>
+                                </div>
+                            </div>
+                            <ul class="stars">
+                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="shoe single-item hvr-outline-out">
+                            <a href="@Url.Action("ThemGiohang","GioHang",new { @iMaSanPham =@giay.MaSanPham, @strURL=Request.Url.ToString() })">
+                                <button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+                            </a>
+
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+    </div> 
+    }
+       <!-- //womens -->
+    <div class="clearfix"></div>
+</div>

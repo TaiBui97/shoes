@@ -1,0 +1,13 @@
+﻿@using ShoesStore_agforl.Models
+@model IEnumerable<ShoesStore_agforl.Models.SanPham>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-3 col-sm-3 col-xs-3 slidering">
+            <a href="@Url.Action("Index", "Details", new { id = item.MaSanPham })">
+                <img src="~/images/shoes/@item.Anh" alt="@item.TenSanPham" style="max-width:100%;" />
+            </a>
+        </div>
+    }
+</div>

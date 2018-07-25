@@ -1,0 +1,56 @@
+﻿@model ShoesStore_agforl.Models.Slide
+
+@{
+    ViewBag.Title = "EditSlide";
+    Layout = "~/Views/Shared/_LayoutQLSP.cshtml";
+}
+
+
+@using (Html.BeginForm("EditSlide", "Admin", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Slide</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Brand, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Brand, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Brand, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Slogan, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Slogan, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Slogan, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="fileUpload">Hình ảnh</label>
+
+            <div class="col-md-10">
+                <input type="file" name="fileUpload" />
+                <p style="padding:0 10px; color:red">@ViewBag.Thongbao</p>
+                <img src="@Url.Content("~/images/"+Model.IMG)" width="480px" />(Hình ảnh hiện tại)
+
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button class="btn btn-danger" type="submit">Save</button>
+                <button class="btn btn-success" type="submit"><a href="@Url.Action("SlidePage", "Admin") ">Back to list </a></button>
+
+            </div>
+        </div>
+    </div>
+}
+

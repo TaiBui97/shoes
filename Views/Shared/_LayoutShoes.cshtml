@@ -1,0 +1,188 @@
+﻿
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+    <title>Agforl Shoes</title>
+    <!-- custom-theme -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Downy Shoes Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- //custom-theme -->
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet" href="~/Content/shop.css" type="text/css" media="screen" property="" />
+    <link href="~/Content/style7.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Content/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- font-awesome-icons -->
+    <link href="~/Content/font-awesome.css" rel="stylesheet">
+    <!-- //font-awesome-icons -->
+ 
+</head>
+
+<body>
+   @RenderPage("~/Views/Shoes/Banner_Top.cshtml")
+   @RenderBody()
+    <!-- banner -->
+ 
+   
+    <!-- //banner -->
+    <!-- /girds_bottom-->
+    <div class="grids_bottom">
+        <div class="style-grids">
+            <div class="col-md-6 style-grid style-grid-1">
+                <img src="~/images/goodman.jpg" alt="shoe">
+            </div>
+        </div>
+        @Html.Action("banner1","Shoes")
+        <div class="clearfix"></div>
+    </div>
+    </div>
+    <!-- //grids_bottom-->
+    <!-- /girds_bottom2-->
+    <div class="grids_sec_2">
+        <div class="style-grids_main">
+          @Html.Action("banner2", "Shoes")
+          @Html.Action("banner3","Shoes")
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- //grids_bottom2-->
+    <!-- /Properties -->
+    <div class="fb-customerchat" page_id="595573213799183"></div>
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '1136685403139879',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.12'
+    });                                         hgj                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+    </script>
+     @RenderPage("~/Views/Shared/Banner.cshtml")
+
+    <!--//banner -->
+    <!-- /newsletter-->@Html.Partial("~/Views/User/GetMail.cshtml")
+   <!-- //newsletter-->
+    <!-- footer -->
+ 
+
+    <div id="map"></div>
+    @RenderPage("~/Views/Shared/Footer.cshtml")
+
+
+    </div>
+    <!-- //footer -->
+    <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    
+
+    <!-- map -->
+
+    <script>
+      function initMap() {
+          var uluru = { lat: 10.802041, lng: 106.714892 };
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVvL6v6ajU8y3DQ7yZjH72S4NPFsXejtA&callback=initMap">
+    </script>
+    <!--Map-->
+    <script type="text/javascript" src="~/Scripts/jquery-2.1.4.min.js"></script>
+    <!-- //js -->
+    <!-- /nav -->
+    <script src="~/Scripts/modernizr-2.6.2.min.js"></script>
+    <script src="~/Scripts/classie.js"></script>
+    <script src="~/Scripts/demo1.js"></script>
+    <!-- //nav -->
+    <!-- cart-js -->
+    <script src="~/Scripts/minicart.js"></script>
+    <script>
+		shoe.render();
+
+		shoe.cart.on('shoe_checkout', function (evt) {
+			var items, len, i;
+
+			if (this.subtotal() > 0) {
+				items = this.items();
+
+				for (i = 0, len = items.length; i < len; i++) {}
+			}
+		});
+    </script>
+    <!-- //cart-js -->
+    <!--search-bar-->
+    <script src="~/Scripts/search.js"></script>
+    <!--//search-bar-->
+    <script src="~/Scripts/responsiveslides.min.js"></script>
+    <script>
+		$(function () {
+			$("#slider4").responsiveSlides({
+				auto: true,
+				pager: true,
+				nav: true,
+				speed: 1000,
+				namespace: "callbacks",
+				before: function () {
+					$('.events').append("<li>before event fired.</li>");
+				},
+				after: function () {
+					$('.events').append("<li>after event fired.</li>");
+				}
+			});
+		});
+    </script>
+    <!-- js for portfolio lightbox -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="~/Scripts/move-top.js"></script>
+    <script type="text/javascript" src="~/Scripts/easing.js"></script>
+    <script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+    </script>
+    <!-- //end-smoth-scrolling -->
+
+    <script type="text/javascript" src="~/Scripts/bootstrap-3.1.1.min.js"></script>
+
+    <script lang="javascript">var _vc_data = {id : 3424753, secret : '9bdca98d240c3573fade3918db22a53b'};(function() {var ga = document.createElement('script');ga.type = 'text/javascript';ga.async=true; ga.defer=true;ga.src = '//live.vnpgroup.net/client/tracking.js';var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script>         	
+</body>
+
+</html>

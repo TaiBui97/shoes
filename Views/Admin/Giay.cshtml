@@ -1,0 +1,92 @@
+﻿@using ShoesStore_agforl.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<ShoesStore_agforl.Models.SanPham>
+
+@helper Truncate(string input, int length)
+{
+if (input.Length < length)
+{
+        @input
+}
+else
+{
+        @input.Substring(0, length)<text>...</text>
+}
+}
+@{
+    ViewBag.Title = "Giay";
+    Layout = "~/Views/Shared/_LayoutQLSP.cshtml";
+}
+@{
+    QuanTriVien kh = (QuanTriVien)Session["Taikhoanadmin"];
+}
+
+<button class="btn btn-success" type="submit"><a href="@Url.Action("ThemmoiGiay", "Admin") ">THÊM GIÀY MỚI </a></button>
+
+
+<table class="table">
+    <tr>
+        <th style="width:200px"> Tên Giày</th>
+        <th style="width:200px">  Giá bán </th>
+        <th style="width:200px">  Mô tả </th>
+        <th style="width:200px"> Số lượng tồn </th>
+        <th style="width:200px">  Ngày cập nhật </th>
+        <th style="width:200px"> Ảnh</th>
+        <th style="width:200px">  Tên loại </th>
+        <th style="width:200px">  Tên hãng </th>
+        <th style="width:200px">  Speial </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenSanPham)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gia)
+        </td>
+        <td>
+            @Truncate(item.ChiTiet, 60)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuongCon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayLaySP )
+        </td>
+        <td>
+            <img src="@Url.Content("~/images/shoes/"+  item.Anh)" width="120px" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Loai.TenLoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hang.TenHangSanPham)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DacBiet)
+        </td>
+        <td>
+            <button class="btn btn-info" type="submit"><a href="@Url.Action("Chitietgiay", "Admin", new { id=item.MaSanPham }) ">Chi tiết </a></button>
+            <button class="btn btn-warning" type="submit"style="width:68px;"><a href="@Url.Action("Suasp", "Admin", new { id=item.MaSanPham }) ">Sữa</a></button>
+            <button class="btn btn-danger" type="submit"style="width:68px;"><a href="@Url.Action("Xoagiay", "Admin", new { id=item.MaSanPham }) ">Xóa </a></button>
+
+            @*@Html.ActionLink("Edit", "Suasp", new { id=item.MaSanPham }) 
+            @Html.ActionLink("Details", "Chitietgiay", new { id=item.MaSanPham }) 
+            @Html.ActionLink("Delete", "Xoagiay", new { id=item.MaSanPham })*@
+        </td>
+    </tr>
+}
+
+</table>
+<hr />
+<div class="MenuTrang">
+
+    @Html.PagedListPager(Model, page => Url.Action("Giay", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>

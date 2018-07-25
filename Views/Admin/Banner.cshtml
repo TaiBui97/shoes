@@ -1,0 +1,44 @@
+﻿@using ShoesStore_agforl.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<ShoesStore_agforl.Models.QuangCao>
+
+
+
+@{
+    ViewBag.Title = "Giay";
+    Layout = "~/Views/Shared/_LayoutQLSP.cshtml";
+}
+@{
+    QuanTriVien kh = (QuanTriVien)Session["Taikhoanadmin"];
+}
+<table class="table">
+    <tr>
+        <th style="width:200px">Ảnh giới thiệu</th>
+        <th style="width:200px">Hiệu Giày</th>
+        <th style="width:200px">Bài Viết</th>
+        <th style="width:200px">Đường dẫn</th>
+        <th style="width:200px"></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <img src="@Url.Content("~/images/"+  item.Anh)" width="360px" />
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HieuGiay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BaiViet)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Url)
+        </td>
+        <td>
+            <button class="btn btn-info" type="submit"><a href="@Url.Action("Chitietbanner", "Admin", new { id=item.MaQC }) ">Chi tiết </a></button>
+            <button class="btn btn-warning" type="submit" style="width:68px;"><a href="@Url.Action("SuaBanner", "Admin", new { id=item.MaQC }) ">Sữa</a></button>
+        </td>
+    </tr>
+}
+
+</table>

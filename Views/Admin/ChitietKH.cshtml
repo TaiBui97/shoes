@@ -1,0 +1,71 @@
+﻿@model ShoesStore_agforl.Models.KhachHang
+
+@{
+    ViewBag.Title = "ChitietKH";
+    Layout = "~/Views/Shared/_LayoutQLSP.cshtml";
+}
+
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+Tên khách hàng        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenKhachHang)
+        </dd>
+
+        <dt>
+Tài khoản        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TaiKhoan)
+        </dd>
+
+        <dt>
+Mật khẩu        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MatKhau)
+        </dd>
+
+        <dt>
+Địa chỉ        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DiaChi)
+        </dd>
+
+        <dt>
+Số điện thoại        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoDienThoai)
+        </dd>
+
+        <dt>
+Email        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+Tình trạng        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TinhTrang)
+        </dd>
+
+        <dt>
+Ngày sinh        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ngaysinh)
+        </dd>
+
+    </dl>
+</div>
+<button class="btn btn-danger" type="submit"><a href="@Url.Action("SuaKH", "Admin", new { id = Model.MaKhachHang }) ">Chỉnh sửa </a></button>
+<button class="btn btn-success" type="submit"><a href="@Url.Action("Khachhang", "Admin") ">Back to list </a></button>

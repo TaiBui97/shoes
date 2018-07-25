@@ -1,0 +1,44 @@
+﻿@model IEnumerable<ShoesStore_agforl.Models.Footer>
+
+
+@foreach (var item in Model)
+{
+<div class="col-md-5 sign-gd-two">
+    <h4>Store <span>Information</span></h4>
+    <div class="address">
+        <div class="address-grid">
+            <div class="address-left">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+            </div>
+            <div class="address-right">
+                <h6>Phone Number</h6>
+                <p>@item.Phone</p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="address-grid">
+            <div class="address-left">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+            </div>
+            <div class="address-right">
+                <h6>Email Address</h6>
+                <p>Email :<a href="mailto:huutaibui97@gmail.com"> @item.Email</a></p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="address-grid">
+            <div class="address-left">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+            </div>
+            <div class="address-right">
+                <h6>Location</h6>
+                <p>
+                  @item.Location
+
+                </p>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+}

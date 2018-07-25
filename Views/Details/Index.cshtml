@@ -1,0 +1,124 @@
+﻿@using ShoesStore_agforl.Models
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutDetails.cshtml";
+}
+
+<div class="ads-grid_shop">
+    <div class="shop_inner_inf">
+        <div class="col-md-4 single-right-left ">
+            <div class="grid images_3_of_2">
+                <div class="flexslider">
+
+                    <ul class="slides">
+                        <li data-thumb="images/d2.jpg">
+                            <div class="thumb-image"> <img src="~/images/shoes/@Model.Anh" data-imagezoom="true" class="img-responsive"> </div>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8 single-right-left simpleCart_shelfItem">
+            <h3>@Model.TenSanPham</h3>
+            <p>
+                <span class="item_price">@Model.Gia</span>
+                @*<del>$1,199</del>*@
+            </p>
+            <div class="rating1">
+                <ul class="stars">
+                    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+                    <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+            <div class="description">
+                <h5>Check delivery, payment options and charges at your location</h5>
+                <form action="#" method="post">
+                    <input type="text" value="Enter pincode" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter pincode';}"
+                           required="">
+                    <input type="submit" value="Check">
+                </form>
+            </div>
+            <div class="color-quality">
+                <div class="color-quality-right">
+                    <h5>Size :</h5>
+                    <select id="country1" onchange="change_country(this.value)" class="frm-field required sect">
+                     
+                        <option value="null">6 US</option>
+                        <option value="null">6.5 US</option>
+                        <option value="null">7 US</option>
+                        <option value="null">7.5 US</option>
+                        <option value="null">8 US</option>
+                        <option value="null">8.5 US</option>
+                        <option value="null">9 US</option>
+                        <option value="null">9.5 US</option>
+                        <option value="null">10 US</option>
+                       
+                    </select>
+                </div>
+            </div>
+            <br />
+            <div class="occasion-cart">
+                <div class="shoe single-item single_page_b">
+                    <form action="#" method="post">                                      
+                     
+                        <button class="btn btn-danger" type="submit"><a href="@Url.Action("ThemGiohang","GioHang",new { @iMaSanPham =@Model.MaSanPham, @strURL=Request.Url.ToString() })">Add to cart </a></button>
+                        <a href="@Model.Thanhtoantructuyen"><img src="~/images/btnbaokim.png" style="width: 120px;" /></a>
+
+                    </form>
+                  
+
+                </div>
+
+            </div>
+            <ul class="social-nav model-3d-0 footer-social social single_page">
+                <li class="share">Share On : </li>
+                <li>
+                   
+                        <div class="fb-share-button" data-href="https://www.facebook.com/a7thptlv" data-layout="box_count" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fa7thptlv&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Chia sẻ</a></div>                    
+                </li>
+
+                
+               
+            </ul>
+
+        </div>
+        <div class="clearfix"> </div>
+        <!--/tabs-->
+        <div class="responsive_tabs">
+            <div id="horizontalTab">
+                <ul class="resp-tabs-list">
+                    <li>Description</li>
+                    <li>Comments on facebook</li>
+            
+                </ul>
+                <div class="resp-tabs-container">
+                    <!--/tab_one-->
+                    @Html.Action("Mota", "Details")
+                    <!--//tab_one-->
+                    <div class="tab2">
+
+                        <div class="single_page">
+                            <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="1300" data-numposts="6"></div>
+
+                    </div>
+                 
+                </div>
+            </div>
+        </div>
+        <!--//tabs-->
+        <!-- /new_arrivals -->
+        @Html.Action("Ramdom","Details")
+        <!--//new_arrivals-->
+
+
+    </div>
+</div>
+    </div>
+<!-- //top products -->
+@RenderPage("~/Views/Shared/Banner.cshtml")
+<!-- /newsletter-->
+@Html.Partial("~/Views/User/GetMail.cshtml")

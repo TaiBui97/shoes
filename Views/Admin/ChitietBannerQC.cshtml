@@ -1,0 +1,44 @@
+﻿@model ShoesStore_agforl.Models.Banner
+
+@{
+    ViewBag.Title = "ChitietBannerQC";
+    Layout = "~/Views/Shared/_LayoutQLSP.cshtml";
+}
+
+<h2>ChitietBannerQC</h2>
+
+<div>
+    <h4>Banner</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("~/images/"+  Model.Image)" width="480px" />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Url)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button class="btn btn-danger" type="submit"><a href="@Url.Action("SuaBannerQC", "Admin", new { id = Model.MaBanner }) ">Chỉnh sửa </a></button>
+    <button class="btn btn-success" type="submit"><a href="@Url.Action("BannerQC", "Admin") ">Back to list </a></button>
+
+</p>

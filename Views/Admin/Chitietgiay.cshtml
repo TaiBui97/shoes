@@ -1,0 +1,101 @@
+﻿@model ShoesStore_agforl.Models.SanPham
+
+@{
+    ViewBag.Title = "Chitietgiay";
+    Layout = "~/Views/Shared/_LayoutQLSP.cshtml";
+}
+
+
+
+<div>
+  
+    <dl class="dl-horizontal">
+        <dt>
+            Tên sản phẩm
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenSanPham)
+        </dd>
+
+        <dt>
+            Giá
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gia)
+        </dd>
+
+        <dt>
+            Mô tả
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChiTiet)
+        </dd>
+
+       
+
+        <dt>
+           Số lượng còn
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuongCon)
+        </dd>
+
+        <dt>
+            Ngày lấy sản phẩm 
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayLaySP)
+        </dd>
+
+        <dt>
+            Hình ảnh
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("~/images/shoes/"+  Model.Anh)" width="120px" />
+        </dd>
+
+        <dt>
+           Tên loại
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Loai.TenLoai)
+        </dd>
+
+        <dt>
+           Tên hãng
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Hang.TenHangSanPham)
+        </dd>
+
+
+        <dt>
+            Đặc biệt
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DacBiet)
+        </dd>
+
+        <dt>
+            Thanh toán trưc tuyến
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Thanhtoantructuyen)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button class="btn btn-danger" type="submit"><a href="@Url.Action("Suasp", "Admin", new { id = Model.MaSanPham }) ">Chỉnh sửa </a></button>
+    <button class="btn btn-success" type="submit"><a href="@Url.Action("Giay", "Admin") ">Back to list </a></button>
+</p>

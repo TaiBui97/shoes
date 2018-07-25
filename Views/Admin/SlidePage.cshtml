@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ShoesStore_agforl.Models.Slide>
+
+@{
+    ViewBag.Title = "SlidePage";
+    Layout = "~/Views/Shared/_LayoutQLSP.cshtml";
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Slogan)
+        </th>
+        <th>
+            Image
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Brand)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Slogan)
+        </td>
+        <td>
+            <img src="@Url.Content("~/images/"+  item.IMG)" width="480px" />
+        </td>
+        <td>
+            <button class="btn btn-info" type="submit"><a href="@Url.Action("ChitietSlide", "Admin", new { id=item.ID }) ">Chi tiết </a></button>
+            <button class="btn btn-warning" type="submit" style="width:68px;"><a href="@Url.Action("EditSlide", "Admin", new { id=item.ID }) ">Sữa</a></button>
+        </td>
+    </tr>
+}
+
+</table>

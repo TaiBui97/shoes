@@ -1,0 +1,24 @@
+﻿@model IEnumerable<ShoesStore_agforl.Models.SanPham>
+
+
+<div class="deal-leftmk left-side">
+    <h3 class="agileits-sear-head">Special Deals</h3>
+    @foreach (var giay in Model)
+    {
+
+        <div class="special-sec1">
+            <div class="col-xs-4 img-deals">
+
+                <a href="@Url.Action("Index", "Details", new {id =giay.MaSanPham})">
+                    <img src="~/images/shoes/@giay.Anh" alt="giay.TenSanPham">
+                </a>
+            </div>
+            <div class="col-xs-8 img-deal1">
+                <a href="#"><h3>@giay.TenSanPham</h3></a>
+                <a href="#">@giay.Gia</a>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    }
+    
+    </div>

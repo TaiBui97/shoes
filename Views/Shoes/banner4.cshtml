@@ -1,0 +1,11 @@
+﻿@model IEnumerable<ShoesStore_agforl.Models.QuangCao>
+
+
+@foreach (var item in Model)
+{
+    <div class="style-grids">
+        <div class="col-md-6 style-grid style-grid-1">
+            <img src="~/images/@item.Anh" alt="shoe">
+        </div>
+    </div>
+}

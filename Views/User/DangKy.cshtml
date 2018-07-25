@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+
+
+<div class="main">
+
+<div class="main-w3lsrow">
+    <!-- login form -->
+    <div class="login-form login-form-left">
+        <div class="agile-row">
+            <h2>Register Here</h2>
+            <div class="login-agileits-top">
+                <form action="#" method="post">
+
+
+                    @using (Html.BeginForm())
+                    {
+                        @Html.ValidationSummary(true)
+                        <p>Họ tên khách hàng : </p>
+                            @Html.TextBox("Hoten") @ViewData["Loi7"]
+
+                            <p>Tên đăng nhập</p>
+                            @Html.TextBox("TenDN") @ViewData["Loi8"]
+
+                            <p>Ðịa chỉ :</p>
+                            @Html.TextBox("Email") @ViewData["Loi2"]
+
+                            <p>Password : </p>
+                            @Html.Password("pwd") @ViewData["Loi3"]
+
+                            <p>Nhập lại Password:</p>
+                            @Html.Password("pwd2") @ViewData["Loi4"]
+
+                            <p>Ðịa chỉ :</p>
+                            @Html.TextBox("DiaChi") @ViewData["Loi5"]
+
+                            <p>Ðiện thoại :</p>
+                            @Html.TextBox("Phone") @ViewData["Loi6"]
+
+                            <p>Ngày sinh :</p>
+                            <input type="date" name="Ngaysinh" class="input-xlarge">
+
+
+
+
+                            <input type="submit" value="Create your account">
+                    }
+                    
+                </form>
+
+            </div>
+            <div class="login-agileits-bottom">
+                <h6 style="color:white;"><a href="@Url.Action("DangNhap","User")">Login here</a> | <a href="@Url.Action("Index","Shop")">Back to Shop</a> </h6>
+                <h6 style="color:white;">______</h6><br />
+                <br />
+                <h6><a href="#">Forgot password?</a></h6>
+
+            </div>
+            <div class="login-agileits-bottom1">
+                <h3>(or)</h3>
+
+            </div>
+            <div class="social_icons agileinfo">
+                <ul class="top-links">
+                    <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- copyright -->
+
+<!-- //copyright -->
+    </div>

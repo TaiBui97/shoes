@@ -1,0 +1,78 @@
+﻿@model ShoesStore_agforl.Models.KhachHang
+
+@{
+    ViewBag.Title = "Suathongtin";
+    Layout = "~/Views/Shared/_LayoutAbout.cshtml";
+}
+<br />
+<h2 style="text-align:center"> THAY ĐỔI THÔNG TIN </h2>
+<br />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+    
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.MaKhachHang)
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="TenKhachHang">Tên Khách Hàng</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TenKhachHang, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenKhachHang, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+       
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="MatKhau">Mật khẩu</label>
+            <div class="col-md-10">
+                <input type="password" name="Matkhau" style="background-color:#ededed;height: 30px;">
+            </div>
+        </div>
+       
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="DiaChi">Địa chỉ</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DiaChi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.DiaChi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="SoDienThoai">Số điện thoại</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SoDienThoai, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.SoDienThoai, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Email">Email </label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Ngaysinh">Ngày sinh </label>
+            <div class="col-md-10">
+               <input type="date" name="Ngaysinh" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button class="btn btn-danger" type="submit">Save</button>
+                <button class="btn btn-success" type="submit"><a href="@Url.Action("Index", "Shoes") " style="color:white;">Back to list </a></button>
+            </div>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,47 @@
+﻿@model ShoesStore_agforl.Models.QuangCao
+@{
+    ViewBag.Title = "Chitietgiay";
+    Layout = "~/Views/Shared/_LayoutQLSP.cshtml";
+}
+
+<div>
+    
+    <dl class="dl-horizontal">
+        <dt>
+            Ảnh giới thiệu
+        </dt>
+
+        <dd>
+            <img src="@Url.Content("~/images/"+  Model.Anh)" width="480px" />
+        </dd>
+
+        <dt>
+            Hiệu Giày
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HieuGiay)
+        </dd>
+
+        <dt>
+            Giới thiệu giày
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BaiViet)
+        </dd>
+
+        <dt>
+            Url bài viết
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Url)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button class="btn btn-danger" type="submit"><a href="@Url.Action("SuaBanner", "Admin", new { id = Model.MaQC }) ">Chỉnh sửa </a></button>
+    <button class="btn btn-success" type="submit"><a href="@Url.Action("Giay", "Admin") ">Back to list </a></button>
+</p>

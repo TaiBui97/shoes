@@ -1,0 +1,290 @@
+﻿
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        .mySlides {
+            display: none;
+        }
+            .mySlides h6, .mySlides h6 {
+                font-size: 20px;
+                margin-top: 15px;
+                color: #fff;
+                letter-spacing: 1px;
+                font-weight: 700;
+                position: absolute;
+                top: 38%;
+                left: 12%;
+            }
+    </style>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+   
+    <script>
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.12&appId=1136685403139879&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+	<title>Agforl Shoes </title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Downy Shoes Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //custom-theme -->
+	<link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+	<link rel="stylesheet" href="~/Content/shop.css" type="text/css" media="screen" property="" />
+	<link href="~/Content/style7.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- Owl-carousel-CSS -->
+	<link rel="stylesheet" type="text/css" href="~/Content/jquery-ui1.css">
+	<link href="~/Content/style.css" rel="stylesheet" type="text/css" media="all" />
+	<!-- font-awesome-icons -->
+	<link href="~/Content/font-awesome.css" rel="stylesheet">
+	<!-- //font-awesome-icons -->
+	<link href="//fonts.googleapis.com/css?family=Montserrat:100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+	    rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+</head>
+
+<body>
+   
+	<!-- banner -->
+    @RenderPage("~/Views/Shared/Banner_Shop.cshtml")
+
+
+
+
+	<!-- //banner -->
+	<!-- top Products -->
+	<div class="ads-grid_shop">
+		<div class="shop_inner_inf">
+			<!-- tittle heading -->
+
+			<!-- //tittle heading -->
+			<!-- product left -->
+			<div class="side-bar col-md-3">
+				<div class="search-hotel">
+					<h3 class="agileits-sear-head">Search Here..</h3>
+					<form action="/Shop/Search" method="post">
+						<input type="search" placeholder="Product name..." name="search" required="">
+						<input type="submit" value="">
+					</form>
+				</div>
+				<!-- price range -->
+				<div class="range">
+					<h3 class="agileits-sear-head">Price range</h3>
+					<ul class="dropdown-menu6">
+						<li>
+							<div id="slider-range"></div>
+							<input type="text" id="Price" style="border: 0; color: #ffffff; font-weight: normal;" />
+						</li>
+					</ul>
+				</div>
+				<!-- //price range -->
+				<!--preference -->
+				@Html.Action("SpHang","Shop")
+				<!-- // preference -->
+				<!-- discounts -->
+				@Html.Action("SpLoai","Shop")
+				<!-- //discounts -->
+				<!-- deals -->
+                @Html.Action("Dacbiet", "Shop")
+                
+                <div class="customer-rev left-side">
+                    <h3 class="agileits-sear-head">Like Fanpage | Inbox </h3>
+                    <div class="fb-page" data-href="https://www.facebook.com/a7thptlv" data-tabs="timeline" data-width="300" data-height="180" data-small-header="false" data-adapt-container-width="false" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/a7thptlv" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/a7thptlv">The news of Shoes</a></blockquote></div><hr />
+                    <h4 style="text-align:center;"> Video nổi bật <i class="fa fa-facebook"></i> </h4><br />
+                    <div class="fb-video" data-href="https://www.facebook.com/a7thptlv/videos/1780207085335784/" data-width="300" data-show-text="true"><blockquote cite="https://www.facebook.com/a7thptlv/videos/1780207085335784/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/a7thptlv/videos/1780207085335784/">[Giới thiệu] Giày adidas Originals by Kanye West - YEEZY BOOST</a><p>Yeezy Boost 350 (còn gọi là Yeezy 350), mẫu sneaker mà Kanye West thiết kế cho adidas Originals không chỉ là một trong những mẫu giày &quot;hot&quot; nhất của thương hiệu adidas nói riêng mà còn là một trong những item được các tín đồ thời trang thế giới săn lùng nhiều nhất.</p>Người đăng: <a href="https://www.facebook.com/a7thptlv/">The news of LOL</a> vào 1 Tháng 5 2018</blockquote></div>
+                    <!-- LightWidget WIDGET --><hr />
+                   <h4 style="text-align:center;"> <i class="fa fa-instagram"></i>Instagram</h4><br />
+                    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script><iframe src="//lightwidget.com/widgets/93652df49796592e8eaf704f47cd6a34.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+
+                   </div><hr />
+
+				<!-- //deals -->
+
+			</div>
+
+			<!-- //product left -->
+			<!-- product right -->
+			<div class="left-ads-display col-md-9">
+				<div class="wrapper_top_shop">
+                    <div class="w3-content w3-section" style="max-width:980px">
+                        @Html.Action("BannerMoi","Shop")
+                    </div>
+                    
+					<div class="clearfix"></div>
+					<!-- product-sec1 -->
+					@RenderBody()
+                    @Html.Action("BanneQC", "Shop")
+
+                    @Html.Action("BanneQC2", "Shop")
+
+
+					<!-- //product-sec1 -->
+					
+					
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- //top products -->
+    <div class="fb-customerchat" page_id="595573213799183"></div>
+    <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '1136685403139879',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.12'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+    </script>
+    @RenderPage("~/Views/Shared/Banner.cshtml")
+	<!-- /newsletter-->
+    @Html.Partial("~/Views/User/GetMail.cshtml")
+   
+ 
+	<!-- //newsletter-->
+	<!-- footer -->
+    <div id="map"></div>
+    @RenderPage("~/Views/Shared/Footer.cshtml")
+  
+
+   
+    <!-- //SLIDE BANNER-js -->
+    <script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}
+    x[myIndex-1].style.display = "block";
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+    </script>
+    <!-- //SLIDE BANNER-js -->
+
+
+
+
+
+	<!-- //footer -->
+<a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+    <script>
+      function initMap() {
+          var uluru = { lat: 10.802041, lng: 106.714892 };
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 17,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVvL6v6ajU8y3DQ7yZjH72S4NPFsXejtA&callback=initMap">
+    </script>
+    <!-- js -->
+	<script type="text/javascript" src="~/Scripts/jquery-2.1.4.min.js"></script>
+	<!-- //js -->
+	<!-- cart-js -->
+	<script src="~/Scripts/minicart.js"></script>
+	<script>
+		shoe.render();
+
+		shoe.cart.on('shoe_checkout', function (evt) {
+			var items, len, i;
+
+			if (this.subtotal() > 0) {
+				items = this.items();
+
+				for (i = 0, len = items.length; i < len; i++) {}
+			}
+		});
+	</script>
+	<!-- //cart-js -->
+   
+	<!-- /nav -->
+	<script src="~/Scripts/modernizr-2.6.2.min.js"></script>
+	<script src="~/Scripts/classie.js"></script>
+	<script src="~/Scripts/demo1.js"></script>
+	<!-- //nav -->
+	<!--search-bar-->
+	<script src="~/Scripts/search.js"></script>
+	<!--//search-bar-->
+	<!-- price range (top products) -->
+	<script src="~/Scripts/jquery-ui.js"></script>
+	<script>
+		//<![CDATA[ 
+		$(window).load(function () {
+			$("#slider-range").slider({
+				range: true,
+				min: 0,
+				max: 9000,
+				values: [50000, 6000000],
+				slide: function (event, ui) {
+					$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+				}
+			});
+			$("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
+
+		}); //]]>
+	</script>
+	<!-- //price range (top products) -->
+
+	<!-- start-smoth-scrolling -->
+	<script type="text/javascript" src="~/Scripts/move-top.js"></script>
+	<script type="text/javascript" src="~/Scripts/easing.js"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+	</script>
+	<!-- //end-smoth-scrolling -->
+	<script type="text/javascript" src="~/Scripts/bootstrap-3.1.1.min.js"></script>
+    <script lang="javascript">var _vc_data = {id : 3424753, secret : '9bdca98d240c3573fade3918db22a53b'};(function() {var ga = document.createElement('script');ga.type = 'text/javascript';ga.async=true; ga.defer=true;ga.src = '//live.vnpgroup.net/client/tracking.js';var s = document.getElementsByTagName('script');s[0].parentNode.insertBefore(ga, s[0]);})();</script>         	
+</body>
+
+</html>

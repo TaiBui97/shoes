@@ -1,0 +1,37 @@
+﻿@model ShoesStore_agforl.Models.Hang
+
+@{
+    ViewBag.Title = "Suahang";
+    Layout = "~/Views/Shared/_LayoutQLSP.cshtml";
+}
+
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+       
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.MaHangSanPham)
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="TenLoai">Tên Hãng</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TenHangSanPham, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TenHangSanPham, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button class="btn btn-danger" type="submit">Save</button>
+
+                <button class="btn btn-success" type="submit"><a href="@Url.Action("Hang", "Admin") ">Back to list </a></button>
+            </div>
+        </div>
+    </div>
+}
+
